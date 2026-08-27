@@ -117,3 +117,11 @@ endif()
 
 message(STATUS "Umicom Operations Module version: ${PROJECT_VERSION}")
 message(STATUS "Umicom Operations uses Framework-owned application experience")
+
+include(
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../framework/cmake/UmicomApplicationProductisationContribution.cmake")
+umicom_add_application_productisation_contribution(
+    NAME "operations"
+    TARGET umicom_operations_productisation
+    SOURCE "src/productisation_contribution.c"
+    TEST_SOURCE "tests/test_productisation_contribution.c")
