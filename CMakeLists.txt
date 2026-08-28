@@ -72,6 +72,12 @@ target_link_libraries(umicom_operations_module PUBLIC
 umicom_apply_warnings(umicom_operations_module)
 umicom_apply_sanitizers(umicom_operations_module)
 
+include(
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../framework/cmake/UmicomThinApplicationRuntime.cmake")
+umicom_extend_thin_application_runtime(
+    NAME "operations"
+    TARGET "umicom_operations_module")
+
 if(UMICOM_OPERATIONS_BUILD_CONSOLE)
     add_executable(umicom-operations-console
         src/console/main.c)
