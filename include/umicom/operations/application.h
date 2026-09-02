@@ -25,11 +25,23 @@ extern "C" {
 
 #define UMI_OPERATIONS_MODULE_API_VERSION 1U
 
+/**
+ * Provide the operations application id operation used by this module and its client
+ * applications.
+ */
 const char *umi_operations_application_id(void);
 
+/**
+ * Provide the operations application experience operation used by this module and its
+ * client applications.
+ */
 const UmiApplicationExperienceDefinition *
 umi_operations_application_experience(void);
 
+/**
+ * Provide the operations application status operation used by this module and its client
+ * applications.
+ */
 UmiStatus umi_operations_application_status(
     UmiApplicationExperienceStatus *out_status);
 
